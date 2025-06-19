@@ -22,5 +22,10 @@ const chatSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
     },
+    unreadCounts: {
+        type: Map,
+        of: Number, // userId -> unread count
+        default: {},
+    },
 });
 export default mongoose.model("Chat", chatSchema);
